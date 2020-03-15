@@ -1,8 +1,6 @@
-package Day2;/*
- *
+package day2;
+/**
  *Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
- *
- *
  */
 import java.util.*;
 class ValidParanthesis {

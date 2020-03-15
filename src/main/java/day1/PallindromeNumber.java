@@ -1,12 +1,12 @@
-package Day1;/*
+package day1;
+/**
 Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
 
-Coud you solve it without converting the integer to a string
-
+Could you solve it without converting the integer to a string
 
  */
 import java.util.*;
-import java.io.*;
+
 class PallindromeNumber {
     public static boolean isPalindrome(int x) {
         if(x < 0){

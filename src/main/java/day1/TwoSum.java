@@ -1,14 +1,10 @@
-package Day1;
+package day1;
 
 import java.util.*;
-import java.io.*;
 
-
-
-/* You are  given an array of integers, return indices of the two numbers such that they add up to a specific target.
+/** You are  given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
-
 */
 
 class TwoSum {
