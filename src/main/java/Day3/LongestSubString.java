@@ -6,14 +6,13 @@
  *
  *
  */
+import java.util.*;
 
-
-
-class Solution {
+class LongestSubstring {
     public static int getIndex(String s, Character c){
         return s.indexOf(Character.toString(c));
     }
-    public int lengthOfLongestSubstring(String s){
+    public static int lengthOfLongestSubstring(String s){
         int ans = 0;
         if(s.length() == 0){
             return 0;
@@ -29,7 +28,7 @@ class Solution {
                 slidingWindow += Character.toString(s.charAt(i));
             }
             else{
-                int in = Solution.getIndex(slidingWindow,s.charAt(i));
+                int in = LongestSubstring.getIndex(slidingWindow,s.charAt(i));
                 slidingWindow = slidingWindow.substring(in + 1) + Character.toString(s.charAt(i));
                 dp[i] = slidingWindow.length();
                 
@@ -39,5 +38,12 @@ class Solution {
             }
         }
         return ans;
+    }
+    public static void main(String[] args){
+	    Scanner ip = new Scanner(System.in);
+	    System.out.println("Enter the string");
+	    String input = ip.nextLine();
+	    System.out.println(LongestSubstring.lengthOfLongestSubstring(input));
+
     }
 }

@@ -7,8 +7,10 @@ Do not allocate extra space for another array, you must do this by modifying the
  *
  *
  */
-class Solution {
-    public int removeDuplicates(int[] nums) {
+import java.util.*;
+
+class RemoveDuplicates {
+    public static int removeDuplicates(int[] nums) {
         int len = 1;
         if(nums.length == 0){
             return 0;
@@ -24,5 +26,16 @@ class Solution {
             }
         }
         return len;
+    }
+    public static void main(String[] args){
+	    Scanner ip = new Scanner(System.in);
+	    System.out.println("Enter the length of array");
+	    int len = ip.nextInt();
+	    int[] arr = new int[len];
+	    for(int i = 0; i < len; i ++){
+		    arr[i] = ip.nextInt();
+	    }
+	    System.out.println(RemoveDuplicates.removeDuplicates(arr));
+	    
     }
 }

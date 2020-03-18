@@ -9,8 +9,9 @@ The order of elements can be changed. It doesn't matter what you leave beyond th
  *
  *
  */
-class Solution {
-    public int removeElement(int[] nums, int val) {
+import java.util.*;
+class RemoveElements {
+    public static int removeElements(int[] nums, int val) {
         if(nums.length == 0){
             return 0;
         }
@@ -27,5 +28,17 @@ class Solution {
             }
         }
         return nums.length - counter;
+    }
+    public static void main(String[] args){
+	    Scanner ip = new Scanner(System.in);
+	    System.out.println("Enter the length of array");
+	    int len = ip.nextInt();
+	    int[] arr = new int[len];
+	    for(int i = 0; i < len; i ++){
+		    arr[i] = ip.nextInt();
+	    }
+	    System.out.println("Enter the values");
+	    int val = ip.nextInt();
+	    System.out.println(RemoveElements.removeElements(arr,val));
     }
 }
