@@ -1,5 +1,15 @@
-class Solution {
-    public String longestPalindrome(String s) {
+/*
+ *
+ *
+Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+ *
+ *
+ *
+ *
+ */
+import java.util.*;
+class LongestPalindrome{
+    public static String longestPalindrome(String s) {
         int[][] memo = new int[s.length()][s.length()];
         String max = "";
         if(s.length() == 0){
@@ -63,4 +73,9 @@ class Solution {
         }
         return max;
     }
+    public static void main(String[] args){
+	    Scanner ip = new Scanner(System.in);
+	    String input = ip.nextLine();
+	    System.out.println(LongestPalindrome.longestPalindrome(input));
+}
 }
