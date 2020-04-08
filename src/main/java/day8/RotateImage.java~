@@ -1,0 +1,48 @@
+class Point{
+    int x;
+    int y;
+    Point(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+}
+class Solution {
+    
+    static int swap(int tmp, int[][] matrix, Point p){
+        int v = tmp;
+        tmp = matrix[p.x][p.y];
+        matrix[p.x][p.y] = v;
+        return tmp;
+    }
+    
+    public void rotate(int[][] matrix) {
+        int i = 0;
+        int j = 0;
+        int n = matrix.length;
+        int n1 = n;
+        while(true){
+             if(n1 <= 1){
+                return ;
+            }
+            Point p1 = new Point(i,j);
+            Point p2 = new Point(i, n - 1 - j);
+            Point p3 = new Point(n - i - 1, n - j - 1);
+            Point p4 = new Point(n - i - 1, j);
+            for(int k = 0; k < n1 - 1; k ++){
+                int tmp = matrix[p1.x][p1.y];
+                tmp = swap(tmp, matrix, p2);
+                tmp = swap(tmp, matrix, p3);
+                tmp = swap(tmp, matrix, p4);
+                tmp = swap(tmp, matrix, p1);
+                p1.y ++;
+                p2.x ++;
+                p3.y --;
+                p4.x --; 
+            } 
+            i += 1;
+            j += 1;
+            n1 -= 2;
+        }
+        
+    }
+}
